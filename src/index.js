@@ -772,7 +772,9 @@ export default class Gantt {
               });
             }
           } else if (is_dragging) {
-            bar.update_bar_position({ x: $bar.ox + $bar.finaldx });
+            if (bar.task.draggable) {
+              bar.update_bar_position({ x: $bar.ox + $bar.finaldx });
+            }
           }
         });
       });
